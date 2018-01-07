@@ -1,0 +1,29 @@
+{
+  "name": "Health",
+  "version": "0.0.0",
+  "description": "Description for Health Care Billing",
+  "private": true,
+  "repository": "src/main/webapp/bower_components",
+  "devDependencies": {
+    "jquery": "3.1.1",
+    "angular": "1.5.8",
+    "angular-animate": "1.5.8",
+    "angular-cookies": "1.5.8",
+    "angular-local-storage": "0.5.2",
+    "angular-sanitize": "1.5.8",
+    "angular-resource": "1.5.8",
+    "angular-route": "1.5.8",
+    "angular-touch": "1.5.8",
+    "angular-translate": "2.12.1",
+    "angular-aria": "1.5.8",
+    "angular-messages": "1.5.8",
+    "angular-translate-loader-partial": "2.12.1",
+    "bootstrap": "3.3.7",
+    "animate.css": "3.5.1",
+    "moment": "2.10.6",
+    "angular-ui-bootstrap": "2.5.4"
+  },
+  "engines": {
+    "node": "^4.3"
+  }
+}

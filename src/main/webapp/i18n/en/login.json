@@ -1,0 +1,28 @@
+{
+	"common" : {
+		"label" : {
+			"email" : "Email",
+			"password" : "Password",
+			"signIn" : "sign in",
+			"resetPassword": "Reset Password",
+			"rsPwdEmail": "Reset password email sent",
+			"returnSignIn": "Return to sign in",
+			"signout": "sign out"
+		},
+		"messages" : {
+			"logIntoAccount" : "Sign in to your account",
+			"forgorPassword": "Forgot your password?",
+			"returnSignInpage": "Return to sign in page",
+			"fpDescription": "Enter your email address and we will send you a link to reset your password.",
+			"rpSuccessDescOne": "We've successfully sent a reset password email to the address",
+			"rpSuccessDescTwo": "If you cannot find the email, please ensure you check your junk mail.",
+			"error": {
+				"usernameRequired" : "Enter your user name",
+				"passwordRequired" : "Please Enter a Password",
+				"emailPasswordInvalid" : "Invalid Email or Password",
+				"emailRequired" : "Please Enter an Email",
+				"invalidEmail" : "Please enter a valid email"
+			}
+		}
+	}
+}
