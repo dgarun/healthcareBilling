@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE databaseChangeLog [
+        <!ENTITY DataTypeMapper SYSTEM "../DataTypeMapper.xml">
+        ]>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	&DataTypeMapper;
+	
+	<changeSet id="Person_user_name" author="Kumarraj">
+        <createTable tableName="person_user_name">
+        	<column name="id" type="${type.uuid}">
+                <constraints nullable="false" />
+            </column>
+            <column name="user_name" type="${type.varcharname}">
+                <constraints nullable="false" />
+            </column>
+            <column name="person" type="${type.uuid}">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+       
+        <addForeignKeyConstraint baseColumnNames="person"
+            baseTableName="person_user_name"
+            constraintName="fk_person_username"
+            referencedColumnNames="id"
+            referencedTableName="person"/>
+            
+    </changeSet>
+</databaseChangeLog>

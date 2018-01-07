@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import com.healthcare.dto.PersonDto;
 import com.healthcare.model.Person;
+import com.healthcare.repository.PersonRepository;
 import com.healthcare.services.PersonService;
 
 /**
@@ -18,31 +19,32 @@ import com.healthcare.services.PersonService;
 public class PersonManager {
 	
 	@Autowired
-	private PersonService personService;
+	private PersonRepository personRepository;
 	
-	public Boolean savePerson()
+	public Boolean savePerson(Person person)
 	{
-		PersonDto personDto = populatePerson();
-		Boolean isSaved = personService.savePerson(personDto);
-		return isSaved;
-	}
-	
-	public PersonDto populatePerson()
-	{
-		PersonDto personDto = new PersonDto("Arun","Kumar",26,null);
-		return personDto;
-	}
-	
-	public Person transformPersonDtotoPerson(PersonDto personDto)
-	{
-		Person person = new Person();
-		if(personDto != null)
+		
+		/*EntityManagerFactory emf=Persistence.
+				createEntityManagerFactory("jpa");
+	    EntityManager em=emf.createEntityManager();
+	    try{
+	      EntityTransaction entr=em.getTransaction();
+	      entr.begin();
+	      Employee emp = new Employee();
+	      emp.setEmpName("Vinod Kumar");
+	      emp.setEmpSalary(20000);
+	      em.persist(emp);
+	      entr.commit();
+	    }
+	    finally{
+	      em.close();
+	    }*/
+		
+		personRepository.save(person);
+		if(person != null)
 		{
-			person.setFirstName(personDto.getFirstName());
-			person.setLastName(personDto.getLastName());
-			person.setAge(personDto.getAge());
-			person.setDob(personDto.getDob());
+			return true;
 		}
-		return person;
+		return false;
 	}
 }

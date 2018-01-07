@@ -12,6 +12,9 @@
 	
 	<changeSet id="PersonsList" author="Godson">
         <createTable tableName="person">
+        	<column name="id" type="${type.uuid}">
+                <constraints nullable="false" />
+            </column>
             <column name="first_name" type="${type.varcharname}">
                 <constraints nullable="false" />
             </column>
@@ -24,6 +27,14 @@
             <column name="date_of_birth" type="${type.date}">
                 <constraints nullable="true" />
             </column>
+            <column name="age" type="${type.int}">
+                <constraints nullable="true" />
+            </column>
         </createTable>
+         <addPrimaryKey
+            columnNames="id"
+            constraintName="pk_person"
+            schemaName="healthcare"
+            tableName="person"/>
     </changeSet>
 </databaseChangeLog>

@@ -10,6 +10,7 @@ import com.healthcare.dto.PersonDto;
 import com.healthcare.manager.PersonManager;
 import com.healthcare.model.Person;
 import com.healthcare.repository.PersonRepository;
+import com.healthcare.translator.PersonTranslator;
 
 /**
  * @author kumarrajk
@@ -22,34 +23,22 @@ public class PersonService {
 	private PersonManager personManager;
 	
 	@Autowired
-	private PersonRepository personRepository;
+	private PersonTranslator personTranslator;
 	
-	public Boolean savePerson(PersonDto personDto)
+	public Boolean savePerson()
 	{
-		
-		/*EntityManagerFactory emf=Persistence.
-				createEntityManagerFactory("jpa");
-	    EntityManager em=emf.createEntityManager();
-	    try{
-	      EntityTransaction entr=em.getTransaction();
-	      entr.begin();
-	      Employee emp = new Employee();
-	      emp.setEmpName("Vinod Kumar");
-	      emp.setEmpSalary(20000);
-	      em.persist(emp);
-	      entr.commit();
-	    }
-	    finally{
-	      em.close();
-	    }*/
-		
-		Person person = personRepository.save(personManager.transformPersonDtotoPerson(personDto));
-		if(person != null)
-		{
-			return true;
-		}
-		return false;
+		PersonDto personDto = populatePerson();
+		Boolean isSaved = personManager.savePerson(personTranslator.translateToPerson(personDto));
+		return isSaved;
 	}
+	
+	public PersonDto populatePerson()
+	{
+		PersonDto personDto = new PersonDto("Arun","Kumar",26,null);
+		return personDto;
+	}
+	
+	
 	
 	
 
