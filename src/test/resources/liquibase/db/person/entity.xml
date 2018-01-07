@@ -10,31 +10,29 @@
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 	&DataTypeMapper;
 	
-	<changeSet id="PersonUserName" author="Kumarraj">
-        <createTable tableName="person_user_name">
+	<changeSet id="Entity" author="Godson">
+        <createTable tableName="person">
         	<column name="id" type="${type.uuid}">
                 <constraints nullable="false" />
             </column>
-            <column name="user_name" type="${type.varcharname}">
+            <column name="entity" type="${type.varchardef}">
                 <constraints nullable="false" />
             </column>
-            <column name="person" type="${type.uuid}">
+            <column name="category" type="${type.uuid}">
                 <constraints nullable="false" />
             </column>
+           
             <column name="is_active" type="${type.boolean}" defaultValue="1">
             	<constraints nullable="false" />
             </column>
             <column name="created_by"  type="${type.uuid}"></column>
             <column name="created_on" type="${type.uuid}"></column>
             <column name="updated_by" type="${type.uuid}"/>
-
         </createTable>
-       
-        <addForeignKeyConstraint baseColumnNames="person"
-            baseTableName="person_user_name"
-            constraintName="fk_person_username"
+        <addForeignKeyConstraint baseColumnNames="category"
+            baseTableName="entity"
+            constraintName="fk_entity"
             referencedColumnNames="id"
-            referencedTableName="person"/>
-            
+            referencedTableName="entity_category"/>
     </changeSet>
 </databaseChangeLog>

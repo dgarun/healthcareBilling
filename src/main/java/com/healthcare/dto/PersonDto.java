@@ -1,10 +1,11 @@
 package com.healthcare.dto;
 
 import java.sql.Date;
+import java.util.UUID;
 
 public class PersonDto {
 
-	private Long id;
+	private UUID id;
 	private String firstName;
 	private String lastName;
 	private int age;
@@ -14,17 +15,18 @@ public class PersonDto {
 		
 	}
 	
-	public PersonDto(String firstName, String lastName, int age, Date dob){
+	public PersonDto(UUID id,String firstName, String lastName, int age, Date dob){
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
 		this.dob = dob;
 	}
 	
-	public Long getId() {
+	public UUID getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(UUID id) {
 		this.id = id;
 	}
 	public String getFirstName() {

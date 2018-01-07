@@ -10,7 +10,7 @@
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 	&DataTypeMapper;
 	
-	<changeSet id="PersonsList" author="Godson">
+	<changeSet id="Person" author="Godson">
         <createTable tableName="person">
         	<column name="id" type="${type.uuid}">
                 <constraints nullable="false" />
@@ -30,11 +30,14 @@
             <column name="age" type="${type.int}">
                 <constraints nullable="true" />
             </column>
+            <column name="is_active" type="${type.boolean}" defaultValue="1">
+            	<constraints nullable="false" />
+            </column>
+            <column name="created_by"  type="${type.uuid}"></column>
+            <column name="created_on" type="${type.uuid}"></column>
+            <column name="updated_by" type="${type.uuid}"/>
+
         </createTable>
-         <addPrimaryKey
-            columnNames="id"
-            constraintName="pk_person"
-            schemaName="healthcare"
-            tableName="person"/>
+         
     </changeSet>
 </databaseChangeLog>

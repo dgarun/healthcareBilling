@@ -13,3 +13,4 @@
 <property name="type.text" value="text" dbms="mysql"/>
 <property name="type.date" value="date" dbms="mysql"/>
 <property name="type.varbinary" value="varbinary(500)" dbms="mysql"/>
+<property name="type.boolean" value="boolean" dbms="mysql"/>

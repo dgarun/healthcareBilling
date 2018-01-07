@@ -1,0 +1,4 @@
+<column name="is_active">1</column>
+<column name="created_by">bf3e3d15-5638-4433-b83f-709c0719b058</column>
+<column name="updated_by">bf3e3d15-5638-4433-b83f-709c0719b058</column>
+<column name="created_on" valueDate="2018-01-07"/>
