@@ -1,35 +1,23 @@
 package com.healthcare;
 
-import javax.sql.DataSource;
-
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-import liquibase.integration.spring.SpringLiquibase;
-
-@SpringBootApplication
-public class BillingApplication {
+@Configuration
+@ComponentScan(basePackages = "com.healthcare")
+@EnableAutoConfiguration
+public class BillingApplication extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
 		SpringApplication.run(BillingApplication.class, args);
 	}
 	
-	@Bean
-	public SpringLiquibase liquibase() {
-	    SpringLiquibase liquibase = new SpringLiquibase();
-	    liquibase.setChangeLog("classpath:liquibase/db/master.xml");
-	    liquibase.setDataSource(dataSource());
-	    return liquibase;
-	}
-	
-	@ConfigurationProperties(prefix = "spring.datasource")
-	@Bean
-	@Primary
-	public DataSource dataSource() {
-	    return DataSourceBuilder.create().build();
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(BillingApplication.class);
 	}
 }
