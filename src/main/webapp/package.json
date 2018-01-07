@@ -21,7 +21,8 @@
     "bootstrap": "3.3.7",
     "animate.css": "3.5.1",
     "moment": "2.10.6",
-    "angular-ui-bootstrap": "2.5.4"
+    "angular-ui-bootstrap": "2.5.4",
+    "@uirouter/angularjs": "1.0.7"
   },
   "engines": {
     "node": "^4.3"

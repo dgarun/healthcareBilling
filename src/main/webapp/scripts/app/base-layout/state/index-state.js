@@ -1,16 +1,18 @@
-var pages = {
-        name: "pages",
-        abstract: true,
+app.config(['$stateProvider', '$httpProvider', '$logProvider', '$urlRouterProvider', function ($stateProvider, $httpProvider, $log, $urlRouterProvider) {
+	
+	
+	$stateProvider
+	.state('login', {
+        url: '/',
         views: {
             'fillpage': {
                 templateUrl: 'scripts/app/base-layout/views/main.html',
                 controller: 'mainController'
             }
         }
-};
-		 
-app.config(['$stateProvider', '$httpProvider', '$logProvider', '$urlRouterProvider', function ($stateProvider, $httpProvider, $log, $urlRouterProvider) {
-	$urlRouterProvider.otherwise('/');
+    });
+	
+	$urlRouterProvider.otherwise('/login');
 }]);
 
 
