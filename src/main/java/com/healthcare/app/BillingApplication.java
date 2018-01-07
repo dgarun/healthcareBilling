@@ -20,11 +20,4 @@ public class BillingApplication extends SpringBootServletInitializer{
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(BillingApplication.class);
 	}
-	
-	@ConfigurationProperties(prefix = "spring.datasource")
-	@Bean
-	@Primary
-	public DataSource dataSource() {
-	    return DataSourceBuilder.create().build();
-	}
 }

@@ -3,13 +3,10 @@
  */
 package com.healthcare.manager;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.healthcare.dto.PersonDto;
 import com.healthcare.model.Person;
 import com.healthcare.repository.PersonRepository;
-import com.healthcare.services.PersonService;
 
 /**
  * @author kumarrajk
@@ -18,7 +15,6 @@ import com.healthcare.services.PersonService;
 @Component
 public class PersonManager {
 	
-	@Autowired
 	private PersonRepository personRepository;
 	
 	public Boolean savePerson(Person person)

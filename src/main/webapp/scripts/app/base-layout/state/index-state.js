@@ -12,7 +12,7 @@ app.config(['$stateProvider', '$httpProvider', '$logProvider', '$urlRouterProvid
         }
     });
 	
-	$urlRouterProvider.otherwise('/login');
+	$urlRouterProvider.otherwise('/');
 }]);
 
 
