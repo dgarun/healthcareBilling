@@ -22,12 +22,6 @@ public class Person extends BaseModel implements Serializable {
 	@Column(name="age")
 	private int age;
 
-	@Column(name="created_by")
-	private String createdBy;
-
-	@Column(name="created_on")
-	private String createdOn;
-
 	@Temporal(TemporalType.DATE)
 	@Column(name="date_of_birth")
 	private Date dateOfBirth;
@@ -35,23 +29,17 @@ public class Person extends BaseModel implements Serializable {
 	@Column(name="first_name")
 	private String firstName;
 
-	@Column(name="is_active")
-	private byte isActive;
-
 	@Column(name="last_name")
 	private String lastName;
 
 	@Column(name="middle_name")
 	private String middleName;
 
-	@Column(name="updated_by")
-	private String updatedBy;
-
 	public Person() {
 	}
 
 	public UUID getId() {
-		return this.id;
+		return id;
 	}
 
 	public void setId(UUID id) {
@@ -59,31 +47,15 @@ public class Person extends BaseModel implements Serializable {
 	}
 
 	public int getAge() {
-		return this.age;
+		return age;
 	}
 
 	public void setAge(int age) {
 		this.age = age;
 	}
 
-	public String getCreatedBy() {
-		return this.createdBy;
-	}
-
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
-	}
-
-	public String getCreatedOn() {
-		return this.createdOn;
-	}
-
-	public void setCreatedOn(String createdOn) {
-		this.createdOn = createdOn;
-	}
-
 	public Date getDateOfBirth() {
-		return this.dateOfBirth;
+		return dateOfBirth;
 	}
 
 	public void setDateOfBirth(Date dateOfBirth) {
@@ -91,23 +63,15 @@ public class Person extends BaseModel implements Serializable {
 	}
 
 	public String getFirstName() {
-		return this.firstName;
+		return firstName;
 	}
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
-	public byte getIsActive() {
-		return this.isActive;
-	}
-
-	public void setIsActive(byte isActive) {
-		this.isActive = isActive;
-	}
-
 	public String getLastName() {
-		return this.lastName;
+		return lastName;
 	}
 
 	public void setLastName(String lastName) {
@@ -115,19 +79,12 @@ public class Person extends BaseModel implements Serializable {
 	}
 
 	public String getMiddleName() {
-		return this.middleName;
+		return middleName;
 	}
 
 	public void setMiddleName(String middleName) {
 		this.middleName = middleName;
 	}
 
-	public String getUpdatedBy() {
-		return this.updatedBy;
-	}
-
-	public void setUpdatedBy(String updatedBy) {
-		this.updatedBy = updatedBy;
-	}
 
 }

@@ -1,4 +1,4 @@
-package com.healthcare.app;
+package com.healthcare;
 
 import javax.sql.DataSource;
 

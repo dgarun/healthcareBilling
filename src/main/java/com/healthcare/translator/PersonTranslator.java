@@ -17,7 +17,7 @@ public class PersonTranslator {
 			person.setFirstName(personDto.getFirstName());
 			person.setLastName(personDto.getLastName());
 			person.setAge(personDto.getAge());
-			person.setDob(personDto.getDob());
+			person.setDateOfBirth(personDto.getDob());
 		}
 		return person;
 	}
