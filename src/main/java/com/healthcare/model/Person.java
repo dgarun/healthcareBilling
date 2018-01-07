@@ -5,11 +5,6 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.UUID;
 
-
-/**
- * The persistent class for the person database table.
- * 
- */
 @Entity
 @NamedQuery(name="Person.findAll", query="SELECT p FROM Person p")
 public class Person extends BaseModel implements Serializable {
