@@ -13,6 +13,7 @@ public class PersonTranslator {
 		Person person = new Person();
 		if(personDto != null)
 		{
+			person.setId(personDto.getId());
 			person.setFirstName(personDto.getFirstName());
 			person.setLastName(personDto.getLastName());
 			person.setAge(personDto.getAge());

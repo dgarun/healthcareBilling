@@ -1,79 +1,133 @@
-/**
- * 
- */
 package com.healthcare.model;
 
-import java.sql.Date;
+import java.io.Serializable;
+import javax.persistence.*;
+import java.util.Date;
+import java.util.UUID;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 /**
- * @author kumarrajk
- *
+ * The persistent class for the person database table.
+ * 
  */
 @Entity
-@Table(name="person")
-public class Person {
+@NamedQuery(name="Person.findAll", query="SELECT p FROM Person p")
+public class Person extends BaseModel implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 
 	@Id
-    @GeneratedValue
-    private Long id;
-	
-	@Column(name="firstname")
-	private String firstName;
-	
-	@Column(name="lastname")
-	private String lastName;
-	
-	@Column(name="Age")
+	private UUID id;
+
+	@Column(name="age")
 	private int age;
-	
-	@Column(name="dob")
-	private Date dob;
-	
-	public Long getId() {
-		return id;
+
+	@Column(name="created_by")
+	private String createdBy;
+
+	@Column(name="created_on")
+	private String createdOn;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="date_of_birth")
+	private Date dateOfBirth;
+
+	@Column(name="first_name")
+	private String firstName;
+
+	@Column(name="is_active")
+	private byte isActive;
+
+	@Column(name="last_name")
+	private String lastName;
+
+	@Column(name="middle_name")
+	private String middleName;
+
+	@Column(name="updated_by")
+	private String updatedBy;
+
+	public Person() {
 	}
 
-	public void setId(Long id) {
+	public UUID getId() {
+		return this.id;
+	}
+
+	public void setId(UUID id) {
 		this.id = id;
 	}
 
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
 	public int getAge() {
-		return age;
+		return this.age;
 	}
 
 	public void setAge(int age) {
 		this.age = age;
 	}
 
-	public Date getDob() {
-		return dob;
+	public String getCreatedBy() {
+		return this.createdBy;
 	}
 
-	public void setDob(Date dob) {
-		this.dob = dob;
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
 	}
-	
+
+	public String getCreatedOn() {
+		return this.createdOn;
+	}
+
+	public void setCreatedOn(String createdOn) {
+		this.createdOn = createdOn;
+	}
+
+	public Date getDateOfBirth() {
+		return this.dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public String getFirstName() {
+		return this.firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public byte getIsActive() {
+		return this.isActive;
+	}
+
+	public void setIsActive(byte isActive) {
+		this.isActive = isActive;
+	}
+
+	public String getLastName() {
+		return this.lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getMiddleName() {
+		return this.middleName;
+	}
+
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
+	}
+
+	public String getUpdatedBy() {
+		return this.updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
 }

@@ -7,10 +7,8 @@
     <include file="liquibase/db/person/person.xml" />
 	<include file="liquibase/db/person/person_user_name.xml" />
 	<include file="liquibase/db/person/person_user_credential.xml" />
-	<include file="liquibase/db/person/entity_category.xml" />
-	<include file="liquibase/db/person/entity.xml" />
+	<include file="liquibase/db/person/category.xml" />
+	<include file="liquibase/db/person/key.xml" />
 	<include file="liquibase/db/person/person_role.xml" />
-	
-	
 	
 </databaseChangeLog>
