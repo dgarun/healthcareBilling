@@ -15,9 +15,16 @@ public class BillingApplication extends SpringBootServletInitializer{
 	public static void main(String[] args) {
 		SpringApplication.run(BillingApplication.class, args);
 	}
-	
+  
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(BillingApplication.class);
+	}
+	
+	@ConfigurationProperties(prefix = "spring.datasource")
+	@Bean
+	@Primary
+	public DataSource dataSource() {
+	    return DataSourceBuilder.create().build();
 	}
 }

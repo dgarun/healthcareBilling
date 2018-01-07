@@ -26,7 +26,8 @@
             	<constraints nullable="false" />
             </column>
             <column name="created_by"  type="${type.uuid}"></column>
-            <column name="created_on" type="${type.uuid}"></column>
+            <column name="created_on" type="${type.timestamp}"></column>
+            <column name="updated_on" type="${type.timestamp}"></column>
             <column name="updated_by" type="${type.uuid}"/>
         </createTable>
         <addPrimaryKey
@@ -43,6 +44,6 @@
             baseTableName="person_role"
             constraintName="fk_role_mapping"
             referencedColumnNames="id"
-            referencedTableName="entity"/>
+            referencedTableName="key"/>
     </changeSet>
 </databaseChangeLog>

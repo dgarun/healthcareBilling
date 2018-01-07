@@ -10,12 +10,15 @@
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 	&DataTypeMapper;
 	
-	<changeSet id="EntityCategory" author="Godson">
-        <createTable tableName="entity_category">
+	<changeSet id="Constant" author="Godson">
+        <createTable tableName="key">
         	<column name="id" type="${type.uuid}">
                 <constraints nullable="false" />
             </column>
-            <column name="category" type="${type.varchardef}">
+            <column name="value" type="${type.varchardef}">
+                <constraints nullable="false" />
+            </column>
+            <column name="category" type="${type.uuid}">
                 <constraints nullable="false" />
             </column>
            
@@ -23,13 +26,19 @@
             	<constraints nullable="false" />
             </column>
             <column name="created_by"  type="${type.uuid}"></column>
-            <column name="created_on" type="${type.uuid}"></column>
+            <column name="created_on" type="${type.timestamp}"></column>
+            <column name="updated_on" type="${type.timestamp}"></column>
             <column name="updated_by" type="${type.uuid}"/>
         </createTable>
         <addPrimaryKey
             columnNames="id"
-            constraintName="pk_entity_category"
+            constraintName="pk_constant_key"
             schemaName="healthcare"
-            tableName="entity_category"/>
+            tableName="key"/>
+        <addForeignKeyConstraint baseColumnNames="value"
+            baseTableName="key"
+            constraintName="fk_constant_key"
+            referencedColumnNames="id"
+            referencedTableName="category"/>
     </changeSet>
 </databaseChangeLog>
