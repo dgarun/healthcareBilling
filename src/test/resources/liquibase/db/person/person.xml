@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE databaseChangeLog [
+        <!ENTITY DataTypeMapper SYSTEM "../DataTypeMapper.xml">
+        ]>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	&DataTypeMapper;
+	
+	<changeSet id="PersonsList" author="Godson">
+        <createTable tableName="person">
+            <column name="first_name" type="${type.varcharname}">
+                <constraints nullable="false" />
+            </column>
+            <column name="middle_name" type="${type.varcharname}">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_name" type="${type.varcharname}">
+                <constraints nullable="false" />
+            </column>
+            <column name="date_of_birth" type="${type.date}">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
