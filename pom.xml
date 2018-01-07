@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.healthcare</groupId>
-	<artifactId>billing</artifactId>
+	<artifactId>healthcare</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
@@ -96,6 +96,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>healthcare</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
