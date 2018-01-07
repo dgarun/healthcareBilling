@@ -11,7 +11,7 @@
 	&DataTypeMapper;
 	
 	<changeSet id="PersonRole" author="Godson">
-        <createTable tableName="person">
+        <createTable tableName="person_role">
         	<column name="id" type="${type.uuid}">
                 <constraints nullable="false" />
             </column>
@@ -29,6 +29,11 @@
             <column name="created_on" type="${type.uuid}"></column>
             <column name="updated_by" type="${type.uuid}"/>
         </createTable>
+        <addPrimaryKey
+            columnNames="id"
+            constraintName="pk_person_role"
+            schemaName="healthcare"
+            tableName="person_role"/>
         <addForeignKeyConstraint baseColumnNames="person"
             baseTableName="person_role"
             constraintName="fk_person_mapping"

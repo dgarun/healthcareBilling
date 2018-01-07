@@ -11,7 +11,7 @@
 	&DataTypeMapper;
 	
 	<changeSet id="EntityCategory" author="Godson">
-        <createTable tableName="person">
+        <createTable tableName="entity_category">
         	<column name="id" type="${type.uuid}">
                 <constraints nullable="false" />
             </column>
@@ -26,5 +26,10 @@
             <column name="created_on" type="${type.uuid}"></column>
             <column name="updated_by" type="${type.uuid}"/>
         </createTable>
+        <addPrimaryKey
+            columnNames="id"
+            constraintName="pk_entity_category"
+            schemaName="healthcare"
+            tableName="entity_category"/>
     </changeSet>
 </databaseChangeLog>

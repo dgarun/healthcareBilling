@@ -38,6 +38,10 @@
             <column name="updated_by" type="${type.uuid}"/>
 
         </createTable>
-         
+         <addPrimaryKey
+            columnNames="id"
+            constraintName="pk_person"
+            schemaName="healthcare"
+            tableName="person"/>
     </changeSet>
 </databaseChangeLog>

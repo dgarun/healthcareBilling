@@ -29,7 +29,11 @@
             <column name="updated_by" type="${type.uuid}"/>
 
         </createTable>
-       
+       <addPrimaryKey
+            columnNames="id"
+            constraintName="pk_person_user_name"
+            schemaName="healthcare"
+            tableName="person_user_name"/>
         <addForeignKeyConstraint baseColumnNames="person"
             baseTableName="person_user_name"
             constraintName="fk_person_username"
