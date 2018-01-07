@@ -12,11 +12,8 @@ public class BillingCommonController {
 	@Autowired
 	private PersonService personService;
 	
-	@RequestMapping("/savePerson")  
-    public String savePerson(){
-		
-		System.out.println("Is Person Saved to Database : " + personService.savePerson());
-		
-        return "Saved!";  
+	@RequestMapping("/hello")  
+    public String hello(){  
+        return "Hello!";  
     }  
 }
